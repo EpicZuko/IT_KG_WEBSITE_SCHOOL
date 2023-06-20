@@ -23,4 +23,8 @@ const StyledButton = styled.button`
    line-height: 30px;
    background: #0a5271;
    box-shadow: 0px 25px 30px 20px rgba(10, 82, 113, 0.15);
+   @media only screen and (max-width: 390px) {
+      width: 360px;
+      height: 55px;
+   }
 `
