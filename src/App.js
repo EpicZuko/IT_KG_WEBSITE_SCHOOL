@@ -1,11 +1,5 @@
-import Card from './components/UI/Card'
-
 function App() {
-   return (
-      <div className="App">
-         <Card />
-      </div>
-   )
+   return <div className="App">it_kg_school</div>
 }
 
 export default App
