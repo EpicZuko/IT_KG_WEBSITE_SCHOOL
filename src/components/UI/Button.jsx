@@ -24,7 +24,27 @@ const StyledButton = styled.button`
    background: #0a5271;
 
    box-shadow: 0px 25px 30px 20px rgba(10, 82, 113, 0.15);
+   @media (max-width: 375px) {
+      max-width: 90%;
+      height: 55px;
+      font-size: 14px;
+   }
    @media only screen and (max-width: 390px) {
+      max-width: 90%;
+      height: 55px;
+      font-size: 14px;
+   }
+   @media (max-width: 414px) {
+      max-width: 90%;
+      height: 55px;
+      font-size: 14px;
+   }
+   @media (max-width: 820px) {
+      max-width: 90%;
+      height: 55px;
+      font-size: 14px;
+   }
+   @media (max-width: 912px) {
       max-width: 90%;
       height: 55px;
       font-size: 14px;
