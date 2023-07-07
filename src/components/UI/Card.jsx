@@ -14,6 +14,18 @@ const CardStyled = styled.div`
       variant === 'priority' ? '#FFFFFF' : '#ffffff'};
    box-shadow: 0px 20px 30px 20px rgba(10, 82, 113, 0.1);
    border-radius: ${({ variant }) => (variant === 'priority' ? 'none' : '8px')};
+   @media (max-width: 375px) {
+      width: ${({ variant }) => (variant === 'priority' ? '330px' : '360px')};
+      height: ${({ variant }) => (variant === 'priority' ? '280px' : '342px')};
+      background: ${({ variant }) =>
+         variant === 'priority' ? '#FFFFFF' : '#ffffff'};
+      box-shadow: 0px 20px 30px 20px rgba(10, 82, 113, 0.1);
+      border-radius: ${({ variant }) =>
+         variant === 'priority' ? 'none' : '8px'};
+
+      margin-left: ${({ variant }) =>
+         variant === 'priority' ? '20px' : '14px'};
+   }
    @media only screen and (max-width: 390px) {
       width: ${({ variant }) => (variant === 'priority' ? '330px' : '360px')};
       height: ${({ variant }) => (variant === 'priority' ? '280px' : '342px')};
@@ -24,6 +36,42 @@ const CardStyled = styled.div`
          variant === 'priority' ? 'none' : '8px'};
 
       margin-left: ${({ variant }) =>
-         variant === 'priority' ? '20px' : '7px'};
+         variant === 'priority' ? '20px' : '14px'};
+   }
+   @media (max-width: 414px) {
+      width: ${({ variant }) => (variant === 'priority' ? '330px' : '360px')};
+      height: ${({ variant }) => (variant === 'priority' ? '280px' : '342px')};
+      background: ${({ variant }) =>
+         variant === 'priority' ? '#FFFFFF' : '#ffffff'};
+      box-shadow: 0px 20px 30px 20px rgba(10, 82, 113, 0.1);
+      border-radius: ${({ variant }) =>
+         variant === 'priority' ? 'none' : '8px'};
+
+      margin-left: ${({ variant }) =>
+         variant === 'priority' ? '20px' : '14px'};
+   }
+   @media (max-width: 820px) {
+      width: ${({ variant }) => (variant === 'priority' ? '330px' : '360px')};
+      height: ${({ variant }) => (variant === 'priority' ? '280px' : '342px')};
+      background: ${({ variant }) =>
+         variant === 'priority' ? '#FFFFFF' : '#ffffff'};
+      box-shadow: 0px 20px 30px 20px rgba(10, 82, 113, 0.1);
+      border-radius: ${({ variant }) =>
+         variant === 'priority' ? 'none' : '8px'};
+
+      margin-left: ${({ variant }) =>
+         variant === 'priority' ? '20px' : '14px'};
+   }
+   @media (max-width: 912px) {
+      width: ${({ variant }) => (variant === 'priority' ? '330px' : '360px')};
+      height: ${({ variant }) => (variant === 'priority' ? '280px' : '342px')};
+      background: ${({ variant }) =>
+         variant === 'priority' ? '#FFFFFF' : '#ffffff'};
+      box-shadow: 0px 20px 30px 20px rgba(10, 82, 113, 0.1);
+      border-radius: ${({ variant }) =>
+         variant === 'priority' ? 'none' : '8px'};
+
+      margin-left: ${({ variant }) =>
+         variant === 'priority' ? '20px' : '14px'};
    }
 `
