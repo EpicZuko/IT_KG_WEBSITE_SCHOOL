@@ -24,7 +24,7 @@ const CardStyled = styled.div`
          variant === 'priority' ? 'none' : '8px'};
 
       margin-left: ${({ variant }) =>
-         variant === 'priority' ? '20px' : '14px'};
+         variant === 'priority' ? '-2px' : '14px'};
    }
    @media only screen and (max-width: 390px) {
       width: ${({ variant }) => (variant === 'priority' ? '330px' : '360px')};
@@ -72,6 +72,6 @@ const CardStyled = styled.div`
          variant === 'priority' ? 'none' : '8px'};
 
       margin-left: ${({ variant }) =>
-         variant === 'priority' ? '20px' : '14px'};
+         variant === 'priority' ? '-6px' : '14px'};
    }
 `
