@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useCallback, useEffect } from 'react'
 import styled from 'styled-components'
 import css from '../../assets/css.png'
 import html from '../../assets/html.png'
@@ -13,13 +13,30 @@ import springmvc from '../../assets/springmvc.png'
 import Card from '../UI/Card'
 
 const Cards = () => {
+   const [isScroll, setIsScroll] = useState(false)
+   const scrollHeader = () => {
+      if (document.documentElement.scrollTop > 200) {
+         return true
+      }
+      return false
+   }
+   const scrollHandler = useCallback(() => {
+      if (scrollHeader()) setIsScroll(true)
+      else setIsScroll(false)
+   }, [])
+
+   useEffect(() => {
+      window.addEventListener('scroll', () => scrollHandler())
+
+      return () => window.removeEventListener('scroll', scrollHandler)
+   }, [scrollHandler])
    return (
       <div>
          <div>
             <H1>Биздин окуу жайдагы программалоо багыттары:</H1>
          </div>
          <DIV>
-            <DIVCARD>
+            <DIVCARD className={isScroll === true ? 'scrollCard' : ''}>
                <Card>
                   <DivFront>
                      <H3>FRONTEND - JAVASCRIPT </H3>
@@ -57,7 +74,7 @@ const Cards = () => {
                   </UL>
                </Card>
             </DIVCARD>
-            <DIVEND>
+            <DIVEND className={isScroll === true ? 'scrollCard' : ''}>
                <Card>
                   <DivBackEnd>
                      <H4>BACKEND - JAVA</H4>
@@ -100,38 +117,39 @@ export default Cards
 const DIV = styled.div`
    display: flex;
    justify-content: space-evenly;
+   margin-bottom: 275px;
    @media (max-width: 390px) {
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
-      margin-bottom: 256px;
+      margin-bottom: 96px;
    }
    @media (max-width: 414px) {
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
-      margin-bottom: 256px;
+      margin-bottom: 96px;
    }
    @media (max-width: 820px) {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: space-evenly;
-      margin-bottom: 256px;
+      margin-bottom: 96px;
    }
    @media (max-width: 912px) {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: space-evenly;
-      margin-bottom: 256px;
+      margin-bottom: 96px;
    }
    @media (max-width: 1150px) {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: space-evenly;
-      margin-bottom: 256px;
+      margin-bottom: 96px;
    }
 `
 const H1 = styled.h3`
@@ -196,6 +214,19 @@ const H1 = styled.h3`
    }
 `
 const DIVCARD = styled.div`
+   &.scrollCard {
+      animation: front 0.6s ease-in-out;
+      @keyframes front {
+         0% {
+            opacity: 0;
+            transform: translateX(-19rem);
+         }
+         100% {
+            opacity: 1;
+            transform: translateX(0);
+         }
+      }
+   }
    @media (max-width: 390px) {
       margin-bottom: 42px;
    }
@@ -213,6 +244,19 @@ const DIVCARD = styled.div`
    }
 `
 const DIVEND = styled.div`
+   &.scrollCard {
+      animation: back 0.6s ease-in-out;
+      @keyframes back {
+         0% {
+            opacity: 0;
+            transform: translateX(19rem);
+         }
+         100% {
+            opacity: 1;
+            transform: translateY(0);
+         }
+      }
+   }
    @media (max-width: 390px) {
       margin-bottom: 42px;
    }

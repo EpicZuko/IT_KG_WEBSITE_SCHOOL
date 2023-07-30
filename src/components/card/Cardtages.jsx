@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import ImageBackground from '../../assets/FrameBackground2.png'
+// import ImageBackground from '../../assets/FrameBackground2.png'
 import ImageNotbok from '../../assets/imageNotbok.png'
 import Imagetelegram from '../../assets/imageTelegram.png'
 import ImageTelevisor from '../../assets/imageTelevisor.svg'
@@ -8,7 +8,7 @@ import Card from '../UI/Card'
 
 const Cardtages = () => {
    return (
-      <div>
+      <DivContainer>
          <div>
             <H3>IT KG де окуунун артыкчылыктары</H3>
          </div>
@@ -43,19 +43,24 @@ const Cardtages = () => {
                      </Text3>
                   </Div3>
                </Card>
-               <DivS
+               {/* <DivS
                   style={{
                      backgroundImage: `url(${ImageBackground})`,
                   }}
-               />
+               /> */}
             </DivSolte>
          </DIV>
-      </div>
+      </DivContainer>
    )
 }
 
 export default Cardtages
-
+const DivContainer = styled.div`
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+`
 const H3 = styled.h3`
    color: #0a5271;
    font-family: Roboto;
@@ -147,6 +152,7 @@ const DIV = styled.div`
    align-items: center;
    justify-content: space-evenly;
    width: 1330px;
+   margin-bottom: 79px;
    @media (max-width: 375px) {
       display: flex;
       align-items: center;
@@ -306,41 +312,32 @@ const Text3 = styled.p`
 const DivSolte = styled.div`
    position: relative;
 `
-const DivS = styled.div`
-   width: 380px;
-   height: 327px;
-   position: absolute;
-   top: -50px;
-   left: 50px;
-   z-index: -1;
-   @media (max-width: 375px) {
-      display: none;
-   }
-   @media (max-width: 390px) {
-      display: none;
-   }
-   @media (max-width: 414px) {
-      width: 380px;
-      height: 327px;
-      position: absolute;
-      top: -34px;
-      left: 40px;
-      z-index: -1;
-   }
-   @media (max-width: 820px) {
-      width: 380px;
-      height: 327px;
-      position: absolute;
-      top: -34px;
-      left: 40px;
-      z-index: -1;
-   }
-   @media (max-width: 912px) {
-      width: 380px;
-      height: 327px;
-      position: absolute;
-      top: -34px;
-      left: 40px;
-      z-index: -1;
-   }
-`
+
+// const DivS = styled.div`
+//    width: 380px;
+//    height: 327px;
+//    position: absolute;
+//    top: -50px;
+//    left: 50px;
+//    z-index: -1;
+//    @media (max-width: 375px) {
+//       display: none;
+//    }
+//    @media (max-width: 390px) {
+//       display: none;
+//    }
+//    @media (max-width: 414px) {
+//       display: none;
+//    }
+//    @media (max-width: 820px) {
+//       display: none;
+//    }
+//    @media (max-width: 912px) {
+//       width: 380px;
+//       height: 327px;
+//       position: absolute;
+//       top: -34px;
+//       left: 40px;
+//       z-index: -1;
+//    }
+// `

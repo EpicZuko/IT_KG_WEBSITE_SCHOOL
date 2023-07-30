@@ -5,7 +5,7 @@ import frameBackground from '../../assets/frameBackground.png'
 const PupilsCard = () => {
    return (
       <div>
-         <DIV style={{ backgroundImage: `url(${frameBackground})` }}>
+         <DIV>
             <Div>
                <div>
                   <H35>
@@ -36,28 +36,36 @@ export default PupilsCard
 const DIV = styled.div`
    width: 100%;
    height: 375px;
+   margin-bottom: 201px;
+   background-image: url(${frameBackground});
    @media (max-width: 280px) {
       width: 100%;
+      margin-bottom: 55px;
    }
    @media (max-width: 375px) {
       width: 100%;
       height: 220px;
+      margin-bottom: 55px;
    }
    @media (max-width: 390px) {
       width: 100%;
       height: 220px;
+      margin-bottom: 55px;
    }
    @media (max-width: 414px) {
       width: 100%;
       height: 220px;
+      margin-bottom: 55px;
    }
    @media (max-width: 820px) {
       width: 100%;
       height: 220px;
+      margin-bottom: 55px;
    }
    @media (max-width: 912px) {
       width: 100%;
       height: 220px;
+      margin-bottom: 55px;
    }
 `
 const Div = styled.div`

@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useEffect, useState, useCallback } from 'react'
 import styled from 'styled-components'
 import { Navigation, Pagination, EffectCoverflow } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
+// eslint-disable-next-line import/no-cycle
 import { sliderArray } from '../../utils/constants/category'
 
 // eslint-disable-next-line import/no-unresolved
@@ -14,6 +15,23 @@ import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 
 export default function AboutProject() {
+   const [isScroll, setIsScroll] = useState(false)
+   const scrollHeader = () => {
+      if (window.scrollY > 2980) {
+         return true
+      }
+      return false
+   }
+   const scrollHandler = useCallback(() => {
+      if (scrollHeader()) setIsScroll(true)
+      else setIsScroll(false)
+   }, [])
+
+   useEffect(() => {
+      window.addEventListener('scroll', () => scrollHandler())
+
+      return () => window.removeEventListener('scroll', scrollHandler)
+   }, [scrollHandler])
    return (
       <DivContainer>
          <StyledSwiper
@@ -24,22 +42,28 @@ export default function AboutProject() {
             centeredSlides
          >
             {sliderArray?.map((elem) => (
-               <StyledSwiperSlide>
+               <StyledSwiperSlide key={elem.id}>
                   <DivSwiper>
                      <H2>Студенттердин проектери</H2>
                      <Div>
                         <div>
-                           <Img src={elem?.img} alt="" />
+                           <Img
+                              src={elem?.img}
+                              alt="img"
+                              className={isScroll === true ? 'scrollCard' : ''}
+                           />
                         </div>
-                        <div>
+                        <DivScroll
+                           className={isScroll === true ? 'scrollCard' : ''}
+                        >
                            <H1>{elem?.name}</H1>
                            <P>{elem?.text}</P>
                            <ul>
                               {elem?.list.map((list) => (
-                                 <Li>{list?.name}</Li>
+                                 <Li key={list.id}>{list?.name}</Li>
                               ))}
                            </ul>
-                        </div>
+                        </DivScroll>
                      </Div>
                   </DivSwiper>
                </StyledSwiperSlide>
@@ -67,44 +91,11 @@ const StyledSwiper = styled(Swiper)`
 const DivContainer = styled.div`
    width: 100%;
    height: 100%;
-   animation: 4s ease-out 1s running slidein;
-   @keyframes slidein {
-      from {
-         width: 0%;
-         height: 0%;
-      }
-      to {
-         width: 100%;
-         height: 100%;
-      }
-   }
    @media (max-width: 375px) {
       margin-bottom: 176px;
-      animation: 4s ease-out 1s running slidein;
-      @keyframes slidein {
-         from {
-            width: 0%;
-            height: 0%;
-         }
-         to {
-            width: 100%;
-            height: 100%;
-         }
-      }
    }
    @media (max-width: 912px) {
       margin-bottom: 176px;
-      animation: 4s ease-out 1s running slidein;
-      @keyframes slidein {
-         from {
-            width: 0%;
-            height: 0%;
-         }
-         to {
-            width: 100%;
-            height: 100%;
-         }
-      }
    }
 `
 const DivSwiper = styled.div`
@@ -204,6 +195,20 @@ const Img = styled.img`
    width: 847px;
    height: 494px;
    flex-shrink: 0;
+   box-shadow: 0px 25px 50px 20px rgba(2, 22, 31, 0.15);
+   &.scrollCard {
+      animation: img 1s ease-in-out;
+      @keyframes img {
+         0% {
+            opacity: 0;
+            transform: translateX(-19rem);
+         }
+         100% {
+            opacity: 1;
+            transform: translateX(0);
+         }
+      }
+   }
    @media (max-width: 375px) {
       width: 360px;
       height: 209.965px;
@@ -243,6 +248,21 @@ const P = styled.p`
       width: 250px;
       flex-shrink: 0;
       margin-bottom: 16px;
+   }
+`
+const DivScroll = styled.div`
+   &.scrollCard {
+      animation: gift-me 1s ease-in-out;
+      @keyframes gift-me {
+         0% {
+            opacity: 0;
+            transform: translateY(-19rem);
+         }
+         100% {
+            opacity: 1;
+            transform: translateY(0);
+         }
+      }
    }
 `
 const Li = styled.li`
