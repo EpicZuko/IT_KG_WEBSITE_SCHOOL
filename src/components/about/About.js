@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import image from '../assets/image13.png'
+import image from '../../assets/image13.png'
 
 const About = () => {
    return (
@@ -88,6 +88,7 @@ const Div = styled.div`
    justify-content: center;
    width: 100%;
    flex-wrap: wrap;
+   margin-bottom: 273px;
    @media (max-width: 375px) {
       margin-bottom: 120px;
       display: flex;
