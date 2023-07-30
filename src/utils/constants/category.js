@@ -1,5 +1,7 @@
 import image from '../../assets/image 11.svg'
 
+export const URL_BASE =
+   'http://ec2-3-71-206-206.eu-central-1.compute.amazonaws.com'
 export const sliderArray = [
    {
       name: 'GIFT.ME',
