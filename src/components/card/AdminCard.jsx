@@ -1,47 +1,47 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
 import frameBackground from '../../assets/frameBackground.png'
 import onIcon from '../../assets/icons8-slide-up-50 (1).png'
 import upIcon from '../../assets/icons8-slide-up-50.png'
+import {
+   countsPutFinish,
+   countsPutFinishMinus,
+   countsPutStudentPresent,
+   countsPutStudentPresentMinus,
+   countsPutWorker,
+   countsPutWorkerMinus,
+} from '../../store/actions/ActionCounts'
+// import { actionsUiSlice } from '../../store/slices/uiSlice'
 
 const AdminCard = () => {
-   const [graduates, setGraduates] = useState(20)
-   const [students, setStudents] = useState(50)
-   const [job, setJob] = useState(10)
-   const icrementGraduatesHandler = () => {
-      setGraduates((prevState) => {
-         return prevState + 10
-      })
+   const { work, presentStudent, finish } = useSelector(
+      (state) => state.counts.counts
+   )
+   const dispatch = useDispatch()
+
+   const icrementFinishHandler = () => {
+      dispatch(countsPutFinish())
    }
    const dicrementGraduatesHandler = () => {
-      if (graduates > 1) {
-         setGraduates((prevState) => {
-            return prevState - 10
-         })
+      if (finish > 10) {
+         dispatch(countsPutFinishMinus())
       }
    }
    const icrementStudentsHandler = () => {
-      setStudents((prevState) => {
-         return prevState + 10
-      })
+      dispatch(countsPutStudentPresent())
    }
    const dicrementStudentsHandler = () => {
-      if (students > 1) {
-         setStudents((prevState) => {
-            return prevState - 10
-         })
+      if (presentStudent > 10) {
+         dispatch(countsPutStudentPresentMinus())
       }
    }
-   const icrementJobHandler = () => {
-      setJob((prevState) => {
-         return prevState + 10
-      })
+   const icrementWorkerHandler = () => {
+      dispatch(countsPutWorker())
    }
-   const dicrementJobHandler = () => {
-      if (job > 1) {
-         setJob((prevState) => {
-            return prevState - 10
-         })
+   const dicrementWorkerHandler = () => {
+      if (work > 10) {
+         dispatch(countsPutWorkerMinus())
       }
    }
    return (
@@ -50,11 +50,11 @@ const AdminCard = () => {
             <Div>
                <div>
                   <H35>
-                     {graduates}
+                     {finish}
                      <Span>+</Span>
                      <Counters>
                         <CounterIcon
-                           onClick={icrementGraduatesHandler}
+                           onClick={icrementFinishHandler}
                            src={upIcon}
                            alt=""
                         />
@@ -69,7 +69,7 @@ const AdminCard = () => {
                </div>
                <div>
                   <H100>
-                     {students}
+                     {presentStudent}
                      <Span>+</Span>
                      <Counters>
                         <CounterIcon
@@ -88,16 +88,16 @@ const AdminCard = () => {
                </div>
                <div>
                   <H25>
-                     {job}
+                     {work}
                      <Span>+</Span>
                      <Counters>
                         <CounterIcon
-                           onClick={icrementJobHandler}
+                           onClick={icrementWorkerHandler}
                            src={upIcon}
                            alt=""
                         />
                         <CounterIcon
-                           onClick={dicrementJobHandler}
+                           onClick={dicrementWorkerHandler}
                            src={onIcon}
                            alt=""
                         />

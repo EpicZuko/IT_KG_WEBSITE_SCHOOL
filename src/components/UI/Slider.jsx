@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 import { EffectCoverflow, Pagination, Navigation } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
+// eslint-disable-next-line import/no-cycle
+import { slider } from '../../utils/constants/category'
 import SliderCard from './SliderCard'
-
 // eslint-disable-next-line import/no-unresolved
 import 'swiper/css'
 // eslint-disable-next-line import/no-unresolved
@@ -12,7 +13,7 @@ import 'swiper/css/pagination'
 // eslint-disable-next-line import/no-unresolved
 import 'swiper/css/navigation'
 
-function SwiperOverflow({ sliderArray }) {
+function SwiperOverflow() {
    return (
       <DIV>
          <h1 className="heading">Биздин команда</h1>
@@ -37,8 +38,8 @@ function SwiperOverflow({ sliderArray }) {
             modules={[EffectCoverflow, Pagination, Navigation]}
             className="swiper_container"
          >
-            {sliderArray?.map((elem) => (
-               <SwiperSlide>
+            {slider?.map((elem) => (
+               <SwiperSlide key={elem.id}>
                   <SliderCard
                      img={elem?.img}
                      userName={elem?.userName}
@@ -63,6 +64,7 @@ function SwiperOverflow({ sliderArray }) {
 export default SwiperOverflow
 
 const DIV = styled.div`
+   margin-bottom: 50px;
    .container {
       max-width: 124rem;
       padding: 4rem 1rem;
