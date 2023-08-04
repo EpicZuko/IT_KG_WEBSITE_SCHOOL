@@ -1,25 +1,68 @@
-import React from 'react'
+import React, { useRef } from 'react'
+import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
+import { AcceptencePost } from '../../store/actions/AcceptanceAction'
 import Button from '../UI/Button'
 import Input from '../UI/Input'
 
 const Acceptance = () => {
+   const fisrtName = useRef(null)
+   const phoneNumber = useRef(null)
+   const textInput = useRef(null)
+   const textTextTarea = useRef(null)
+
+   const dispatch = useDispatch()
+
+   const submitHandler = (e) => {
+      e.preventDefault()
+      const acceptancies = {
+         firstName: fisrtName.current.value,
+         phoneNumber: phoneNumber.current.value,
+         textInput: textInput.current.value,
+      }
+      const acceptanciesTwo = {
+         firstName: fisrtName.current.value,
+         phoneNumber: phoneNumber.current.value,
+         textTextTarea: textTextTarea.current.value,
+      }
+      if (textInput.current.value !== '') {
+         dispatch(AcceptencePost(acceptancies))
+      } else if (textTextTarea.current.value !== '') {
+         dispatch(AcceptencePost(acceptanciesTwo))
+      }
+
+      fisrtName.current.value = ''
+      phoneNumber.current.value = ''
+      textInput.current.value = ''
+      textTextTarea.current.value = ''
+   }
+
    return (
       <DIV>
          <DIVIMG>
             {/* <img src={acceptance} alt="error acceptance" /> */}
          </DIVIMG>
          <div>
-            <Form>
+            <Form onSubmit={submitHandler}>
                <H1>Кабылдама</H1>
                <DIVNAME>
-                  <Input type="text" name="name" placeholder="Аты жөнү" />
+                  <Input
+                     ref={fisrtName}
+                     type="text"
+                     name="name"
+                     placeholder="Аты жөнү"
+                  />
                </DIVNAME>
                <DIVNUMBER>
-                  <Input type="text" placeholder="Телефон номери" />
+                  <Input
+                     ref={phoneNumber}
+                     type="text"
+                     placeholder="Телефон номери"
+                  />
                </DIVNUMBER>
                <DIVReason>
                   <Input
+                     ref={textInput}
                      type="text"
                      name="application"
                      placeholder="Кайрылууңуздун себеби"
@@ -27,6 +70,7 @@ const Acceptance = () => {
                </DIVReason>
                <DIVTEXT>
                   <Textarea
+                     ref={textTextTarea}
                      name="application"
                      type="text"
                      placeholder="Кайрылууңуздун себеби"

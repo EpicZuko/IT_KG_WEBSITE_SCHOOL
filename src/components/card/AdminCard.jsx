@@ -1,31 +1,107 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
 import frameBackground from '../../assets/frameBackground.png'
+import onIcon from '../../assets/icons8-slide-up-50 (1).png'
+import upIcon from '../../assets/icons8-slide-up-50.png'
+import {
+   countsPutFinish,
+   countsPutFinishMinus,
+   countsPutStudentPresent,
+   countsPutStudentPresentMinus,
+   countsPutWorker,
+   countsPutWorkerMinus,
+} from '../../store/actions/ActionCounts'
+// import { actionsUiSlice } from '../../store/slices/uiSlice'
 
-const PupilsCard = () => {
+const AdminCard = () => {
    const { work, presentStudent, finish } = useSelector(
       (state) => state.counts.counts
    )
+   const dispatch = useDispatch()
+
+   const icrementFinishHandler = () => {
+      dispatch(countsPutFinish())
+   }
+   const dicrementGraduatesHandler = () => {
+      if (finish > 10) {
+         dispatch(countsPutFinishMinus())
+      }
+   }
+   const icrementStudentsHandler = () => {
+      dispatch(countsPutStudentPresent())
+   }
+   const dicrementStudentsHandler = () => {
+      if (presentStudent > 10) {
+         dispatch(countsPutStudentPresentMinus())
+      }
+   }
+   const icrementWorkerHandler = () => {
+      dispatch(countsPutWorker())
+   }
+   const dicrementWorkerHandler = () => {
+      if (work > 10) {
+         dispatch(countsPutWorkerMinus())
+      }
+   }
    return (
       <div>
-         <DIV>
+         <DIV style={{ backgroundImage: `url(${frameBackground})` }}>
             <Div>
                <div>
                   <H35>
-                     {finish} <Span>+</Span>
+                     {finish}
+                     <Span>+</Span>
+                     <Counters>
+                        <CounterIcon
+                           onClick={icrementFinishHandler}
+                           src={upIcon}
+                           alt=""
+                        />
+                        <CounterIcon
+                           onClick={dicrementGraduatesHandler}
+                           src={onIcon}
+                           alt=""
+                        />
+                     </Counters>
                   </H35>
                   <P>Бүтурүүчүлөр</P>
                </div>
                <div>
                   <H100>
-                     {presentStudent} <Span>+</Span>
+                     {presentStudent}
+                     <Span>+</Span>
+                     <Counters>
+                        <CounterIcon
+                           onClick={icrementStudentsHandler}
+                           src={upIcon}
+                           alt=""
+                        />
+                        <CounterIcon
+                           onClick={dicrementStudentsHandler}
+                           src={onIcon}
+                           alt=""
+                        />
+                     </Counters>
                   </H100>
                   <P>Окуучулар</P>
                </div>
                <div>
                   <H25>
-                     {work} <Span>+</Span>
+                     {work}
+                     <Span>+</Span>
+                     <Counters>
+                        <CounterIcon
+                           onClick={icrementWorkerHandler}
+                           src={upIcon}
+                           alt=""
+                        />
+                        <CounterIcon
+                           onClick={dicrementWorkerHandler}
+                           src={onIcon}
+                           alt=""
+                        />
+                     </Counters>
                   </H25>
                   <P>Жумушка орношкондор</P>
                </div>
@@ -35,41 +111,33 @@ const PupilsCard = () => {
    )
 }
 
-export default PupilsCard
+export default AdminCard
 
 const DIV = styled.div`
    width: 100%;
    height: 375px;
-   margin-bottom: 201px;
-   background-image: url(${frameBackground});
    @media (max-width: 280px) {
       width: 100%;
-      margin-bottom: 55px;
    }
    @media (max-width: 375px) {
       width: 100%;
       height: 220px;
-      margin-bottom: 55px;
    }
    @media (max-width: 390px) {
       width: 100%;
       height: 220px;
-      margin-bottom: 55px;
    }
    @media (max-width: 414px) {
       width: 100%;
       height: 220px;
-      margin-bottom: 55px;
    }
    @media (max-width: 820px) {
       width: 100%;
       height: 220px;
-      margin-bottom: 55px;
    }
    @media (max-width: 912px) {
       width: 100%;
       height: 220px;
-      margin-bottom: 55px;
    }
 `
 const Div = styled.div`
@@ -417,5 +485,22 @@ const P = styled.p`
       font-weight: 400;
       margin-top: 6px;
       line-height: 120%;
+   }
+`
+const Counters = styled.div`
+   display: flex;
+   flex-direction: column;
+`
+const CounterIcon = styled.img`
+   width: 20px;
+   &:hover {
+      background-color: rgba(162, 162, 162, 0.3);
+      border-radius: 12px;
+   }
+   &:active {
+      background-color: #0a5271;
+   }
+   @media (max-width: 390px) {
+      width: 15px;
    }
 `
