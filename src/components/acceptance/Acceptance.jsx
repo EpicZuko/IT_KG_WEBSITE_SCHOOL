@@ -2,6 +2,7 @@ import React, { useRef } from 'react'
 import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
 import { AcceptencePost } from '../../store/actions/AcceptanceAction'
+// import { actionsUiSlice } from '../../store/slices/uiSlice'
 import Button from '../UI/Button'
 import Input from '../UI/Input'
 
