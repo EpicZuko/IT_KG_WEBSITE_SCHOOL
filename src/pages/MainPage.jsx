@@ -8,6 +8,7 @@ import Footer from '../components/UI/footer/Footer'
 // eslint-disable-next-line import/no-cycle
 import Header from '../components/UI/header/Header'
 import Modal from '../components/UI/Modal'
+
 import { menuItemsStuructur } from '../utils/constants/category'
 
 const MainPage = () => {
@@ -16,6 +17,7 @@ const MainPage = () => {
    const acceptanceHandlerClose = () => {
       setAccentance(false)
    }
+
    return (
       <Div>
          <Header setAccentance={setAccentance} />

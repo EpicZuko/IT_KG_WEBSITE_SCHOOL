@@ -15,11 +15,15 @@ export const fetchApi = async (data) => {
          requestOptions.body = JSON.stringify(data.body)
       }
       const response = await fetch(URL_BASE + data.url, requestOptions)
+
       if (!response.ok) {
          throw new Error(response.message)
       }
+      const result = await response.json()
 
-      return response.json()
+      console.log(result)
+
+      return result
    } catch (error) {
       throw new Error(error.message)
    }

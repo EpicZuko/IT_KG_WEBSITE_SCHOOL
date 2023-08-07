@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import { fetchApi } from '../../lib/fetchApi'
+import { showErrorMessage, showSuccessMessage } from '../../utils/helpers'
 
 export const AcceptencePost = createAsyncThunk(
    'acceptance/postAcceptance',
@@ -10,9 +11,17 @@ export const AcceptencePost = createAsyncThunk(
             body: data,
             method: 'POST',
          })
-         console.log(response)
+
+         showSuccessMessage('he he he he siuuu')
+
+         if (!response.ok) {
+            return rejectWithValue('error')
+         }
+
+         return response.json()
       } catch (err) {
-         throw rejectWithValue(err.message)
+         showErrorMessage('Что-то прошло не так')
+         return rejectWithValue(err.message)
       }
    }
 )
