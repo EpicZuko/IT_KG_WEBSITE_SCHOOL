@@ -9,7 +9,6 @@ export const acceptanceSlice = createSlice({
    initialState,
    extraReducers: (builder) => {
       builder.addCase(AcceptanceGet.fulfilled, (state, action) => {
-         console.log(action.payload)
          state.users = [...action.payload]
       })
    },

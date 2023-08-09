@@ -1,9 +1,14 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
+import { AcceptanceDelete } from '../../store/actions/AcceptanceAction'
 
 const AcceptanceAdmin = () => {
    const { users } = useSelector((state) => state.acceptance)
+   const dispatch = useDispatch()
+   const deleteAcceptanceHandler = (event) => {
+      dispatch(AcceptanceDelete(event.target.id))
+   }
    return (
       <Container>
          {users.map((user) => {
@@ -11,7 +16,12 @@ const AcceptanceAdmin = () => {
                <StyledCard>
                   <StyledDivName>
                      <UserName>{user.name}</UserName>
-                     <StyledButton>delete</StyledButton>
+                     <StyledButton
+                        id={user.id}
+                        onClick={deleteAcceptanceHandler}
+                     >
+                        delete
+                     </StyledButton>
                   </StyledDivName>
 
                   <p>{user.text}</p>

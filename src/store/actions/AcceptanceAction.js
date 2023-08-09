@@ -44,3 +44,24 @@ export const AcceptencePost = createAsyncThunk(
       }
    }
 )
+// Acceptance delete
+export const AcceptanceDelete = createAsyncThunk(
+   'acceptance/DeleteAcceptance',
+   async (id, { rejectWithValue, dispatch }) => {
+      try {
+         const response = fetchApi({
+            url: `admin/api/${id}`,
+            method: 'DELETE',
+            body: id,
+         })
+         showSuccessMessage('Delete Acceptance')
+         setTimeout(() => {
+            dispatch(AcceptanceGet())
+         }, 500)
+         return response
+      } catch (error) {
+         showErrorMessage('Что-то прошло не так')
+         return rejectWithValue(error.message)
+      }
+   }
+)
