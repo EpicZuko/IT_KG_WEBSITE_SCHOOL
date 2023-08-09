@@ -19,11 +19,7 @@ export const fetchApi = async (data) => {
       if (!response.ok) {
          throw new Error(response.message)
       }
-      const result = await response.json()
-
-      console.log(result)
-
-      return result
+      return response.json()
    } catch (error) {
       throw new Error(error.message)
    }

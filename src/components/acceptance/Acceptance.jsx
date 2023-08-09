@@ -7,29 +7,32 @@ import Button from '../UI/Button'
 import Input from '../UI/Input'
 
 const Acceptance = () => {
-   const fisrtName = useRef(null)
-   const phoneNumber = useRef(null)
-   const textInput = useRef(null)
-   const textTextTarea = useRef(null)
+   const fisrtName = useRef('')
+   const phoneNumber = useRef('')
+   const textInput = useRef('')
+   const textTextTarea = useRef('')
 
    const dispatch = useDispatch()
 
    const submitHandler = (e) => {
       e.preventDefault()
-      const acceptancies = {
-         firstName: fisrtName.current.value,
-         phoneNumber: phoneNumber.current.value,
-         textInput: textInput.current.value,
-      }
-      const acceptanciesTwo = {
-         firstName: fisrtName.current.value,
-         phoneNumber: phoneNumber.current.value,
-         textTextTarea: textTextTarea.current.value,
-      }
+
       if (textInput.current.value !== '') {
-         dispatch(AcceptencePost(acceptancies))
+         dispatch(
+            AcceptencePost({
+               name: fisrtName.current.value,
+               phone_number: phoneNumber.current.value,
+               text: textInput.current.value,
+            })
+         )
       } else if (textTextTarea.current.value !== '') {
-         dispatch(AcceptencePost(acceptanciesTwo))
+         dispatch(
+            AcceptencePost({
+               name: fisrtName.current.value,
+               phone_number: phoneNumber.current.value,
+               text: textTextTarea.current.value,
+            })
+         )
       }
 
       fisrtName.current.value = ''
