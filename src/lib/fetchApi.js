@@ -1,7 +1,7 @@
 import { URL_BASE } from '../utils/constants/category'
 
 const jwt =
-   'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIGRldGFpbHMiLCJpc3MiOiJlbG1pcnplbnMiLCJleHAiOjE2OTQyODYxMjksImlhdCI6MTY5MTYwNzcyOSwidXNlcm5hbWUiOiJzdHJpbmcifQ.TFEdPIP1J9GxH8u2iqHcwj7r8f_oIP1bLKRaYNJmX8U'
+   'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJVc2VyIGRldGFpbHMiLCJpc3MiOiJlbG1pcnplbnMiLCJleHAiOjE2OTQ0NTU1MzYsImlhdCI6MTY5MTc3NzEzNiwidXNlcm5hbWUiOiJzdHJpbmcifQ.mV_JgUcr5qsc8zpPUoxMdPyDEEBINa-g-IRaHRB34_w'
 export const fetchApi = async (data) => {
    try {
       const requestOptions = {

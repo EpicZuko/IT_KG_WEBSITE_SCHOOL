@@ -1,4 +1,5 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import styled from 'styled-components'
 import group from '../../../assets/group.png'
 import instgram from '../../../assets/instagram.png'
@@ -9,6 +10,12 @@ import whatsap from '../../../assets/whatsap.png'
 import youtube from '../../../assets/youtube.png'
 
 const Footer = () => {
+   const { socialLink } = useSelector((state) => state.network)
+   const whatsupLink = socialLink?.filter((link) => link.id === 1)
+   const instagramLink = socialLink?.filter((link) => link.id === 5)
+   const tiktokLink = socialLink?.filter((link) => link.id === 2)
+   const youtubeLink = socialLink?.filter((link) => link.id === 3)
+   const telegramLink = socialLink?.filter((link) => link.id === 4)
    return (
       <DIV>
          <Container>
@@ -19,15 +26,15 @@ const Footer = () => {
             <ContainerFooter>
                <div>
                   <ul>
-                     <Li>
+                     <Li target="blanket" href={instagramLink[0]?.link}>
                         <img src={instgram} alt="" />
                         <Span>it.kg</Span>
                      </Li>
-                     <Li>
+                     <Li target="blanket" href={tiktokLink[0]?.link}>
                         <img src={tiktok} alt="" />
                         <Span>it kg tik tok</Span>
                      </Li>
-                     <Li>
+                     <Li target="blanket" href={youtubeLink[0]?.link}>
                         <img src={youtube} alt="" />
                         <Span>youtube</Span>
                      </Li>
@@ -35,11 +42,11 @@ const Footer = () => {
                </div>
                <div>
                   <ul>
-                     <Li>
+                     <Li target="blanket" href={whatsupLink[0]?.link}>
                         <img src={whatsap} alt="" />
-                        <Span>+996 702 999 072</Span>
+                        <Span>{whatsupLink[0]?.username}</Span>
                      </Li>
-                     <Li>
+                     <Li target="blanket" href={telegramLink[0]?.link}>
                         <img src={telegram} alt="" />
                         <Span>Telegram</Span>
                      </Li>
@@ -142,10 +149,11 @@ const ContainerFooter = styled.div`
    }
 `
 
-const Li = styled.li`
+const Li = styled.a`
    display: flex;
    align-items: center;
    margin-bottom: 30px;
+   text-decoration: none;
    @media screen and (max-width: 280px) {
       margin-top: 30px;
       display: flex;
