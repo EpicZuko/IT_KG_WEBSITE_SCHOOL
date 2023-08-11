@@ -1,10 +1,11 @@
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-// import AcceptanceAdmin from './components/acceptance/AcceptanceAdmin'
 import Notification from './components/UI/Notification'
+import AdminPage from './pages/AdminPage'
 import MainPage from './pages/MainPage'
 import { AcceptanceGet } from './store/actions/AcceptanceAction'
 import { countsGetRequest } from './store/actions/ActionCounts'
+import { socialNetworksGet } from './store/actions/ActionSocialNetworks'
 
 function App() {
    const dispatch = useDispatch()
@@ -12,12 +13,13 @@ function App() {
    useEffect(() => {
       dispatch(countsGetRequest())
       dispatch(AcceptanceGet())
+      dispatch(socialNetworksGet())
    }, [])
 
    return (
       <div className="App">
          <MainPage />
-         {/* <AcceptanceAdmin /> */}
+         <AdminPage />
 
          <Notification />
       </div>
