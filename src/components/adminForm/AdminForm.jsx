@@ -23,6 +23,7 @@ const AdminForm = () => {
          .filter((e) => e.trim().length)
          .join('')
       dispatch(telegramLinkUpdate(telegramValue))
+      telegram.current.value = ''
    }
    const whatsappUpdateHandler = () => {
       const whatsappValue = whatsapp.current.value
@@ -30,15 +31,19 @@ const AdminForm = () => {
          .filter((e) => e.trim().length)
          .join('')
       dispatch(whatsappLinkUpdate(whatsappValue))
+      whatsapp.current.value = ''
    }
    const youtubeUpdateHandler = () => {
       dispatch(youtubeLinkUpdate(youtube.current.value))
+      youtube.current.value = ''
    }
    const tiktokUpdateHandler = () => {
       dispatch(tiktokLinkUpdate(tiktok.current.value))
+      tiktok.current.value = ''
    }
    const instagramUpdateHandler = () => {
       dispatch(instagramLinkUpdate(instagram.current.value))
+      instagram.current.value = ''
    }
    return (
       <StyledForm>

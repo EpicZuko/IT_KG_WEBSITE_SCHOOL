@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import Notification from './components/UI/Notification'
-import AdminPage from './pages/AdminPage'
-import MainPage from './pages/MainPage'
+
+import AppRoutes from './routes/AppRoutes'
 import { AcceptanceGet } from './store/actions/AcceptanceAction'
 import { countsGetRequest } from './store/actions/ActionCounts'
 import { socialNetworksGet } from './store/actions/ActionSocialNetworks'
@@ -18,9 +18,7 @@ function App() {
 
    return (
       <div className="App">
-         <MainPage />
-         <AdminPage />
-
+         <AppRoutes />
          <Notification />
       </div>
    )
