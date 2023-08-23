@@ -1,6 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 import image from '../../assets/image13.png'
+import aboutwe1 from '../../assets/weAbout/aboutwe.png'
+import aboutwe2 from '../../assets/weAbout/IMG_5249.jpg'
+import aboutwe3 from '../../assets/weAbout/weabout3.jpg'
 
 const About = () => {
    return (
@@ -10,13 +13,13 @@ const About = () => {
          </div>
          <Div>
             <div>
-               <Img src={image} alt="" />
+               <DIVIMG img={aboutwe1} />
             </div>
             <div>
-               <Img src={image} alt="" />
+               <DIVIMG img={aboutwe2} />
             </div>
             <div>
-               <Img src={image} alt="" />
+               <DIVIMG img={aboutwe3} />
             </div>
             <div>
                <Img src={image} alt="" />
@@ -116,6 +119,16 @@ const Div = styled.div`
       flex-wrap: wrap;
       margin-left: -4px;
    }
+`
+const DIVIMG = styled.div`
+   width: 327px;
+   height: 242px;
+   margin-left: 6px;
+   margin-bottom: 28px;
+   background-image: url(${(props) => props.img});
+   background-size: 100%;
+   background-repeat: no-repeat;
+   background-position: center;
 `
 const Img = styled.img`
    width: 327px;

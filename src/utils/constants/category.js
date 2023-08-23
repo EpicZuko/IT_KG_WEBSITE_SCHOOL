@@ -1,4 +1,15 @@
 import image from '../../assets/image 11.svg'
+import Aidar from '../../assets/puplisPhoto/aidar.jpg'
+import Anarbu from '../../assets/puplisPhoto/anarbu.jpg'
+import Azamat from '../../assets/puplisPhoto/azamat.jpg'
+import Bektur from '../../assets/puplisPhoto/bektur.jpg'
+import Daniel from '../../assets/puplisPhoto/daniel.jpg'
+import Jumagul from '../../assets/puplisPhoto/jumagul.jpg'
+import Kanat from '../../assets/puplisPhoto/kanat.jpg'
+import Bilal from '../../assets/puplisPhoto/mee.jpg'
+import Nazgul from '../../assets/puplisPhoto/nazgul.jpg'
+import Talant from '../../assets/puplisPhoto/talant.jpg'
+import Zulkainar from '../../assets/puplisPhoto/zulkainar.jpg'
 import telephone from '../../assets/telephone.svg'
 import About from '../../components/about/About'
 // eslint-disable-next-line import/no-cycle
@@ -44,45 +55,69 @@ export const sliderArray = [
 export const slider = [
    {
       id: 1,
-      img: '',
-      userName: 'Nazgul Nazgulovich',
-      name: 'manager',
+      img: Talant,
+      userName: 'Talant Badyshov',
+      name: 'Директор ОФ "İT.KG"',
    },
    {
       id: 2,
-      img: '',
-      userName: 'Bilal Baitov',
-      name: 'JavaScript instructor',
+      img: Azamat,
+      userName: 'Azamat Muratov',
+      name: 'Staff жетекчи инструктор Java, PM',
    },
    {
       id: 3,
-      img: '',
-      userName: 'Elmir Alisherov',
-      name: 'Java mentor',
+      img: Bilal,
+      userName: 'Bilal Baiitov',
+      name: 'Жетекчи инструктор JavaScript, Devops frontend',
    },
    {
       id: 4,
-      img: '',
-      userName: 'Dastan Dastanovich',
-      name: 'Java mentor',
+      img: Zulkainar,
+      userName: 'Zulkainar Kalilov',
+      name: 'Жетекчи ментор JavaScript',
    },
    {
       id: 5,
-      img: '',
-      userName: 'Daniel Danielovich',
-      name: 'Java mentor',
+      img: Daniel,
+      userName: 'Daniel Ahadzhanov',
+      name: 'Продукт ментор, ментор Java SE',
    },
    {
       id: 6,
-      img: '',
-      userName: 'Azamat Muratov',
-      name: '',
+      img: Anarbu,
+      userName: 'Anarbu Amanbaeva',
+      name: 'Инструктор JavaScript',
    },
    {
       id: 7,
-      img: '',
-      userName: 'Talant Badyshov',
-      name: '',
+      img: Bektur,
+      userName: 'Bektur Hanazarov',
+      name: 'Ментор Java Core',
+   },
+   {
+      id: 8,
+      img: Jumagul,
+      userName: 'Jumagul Temishova',
+      name: 'Ментор JavaScript',
+   },
+   {
+      id: 9,
+      img: Kanat,
+      userName: 'Kanat Musaev',
+      name: 'Ментор JavaScript',
+   },
+   {
+      id: 10,
+      img: Aidar,
+      userName: 'Aidar Zhaparov',
+      name: 'Инструктор Java, staff  жетекчинин орун басары',
+   },
+   {
+      id: 11,
+      img: Nazgul,
+      userName: 'Nazgul Temishova',
+      name: 'Менеджер',
    },
 ]
 

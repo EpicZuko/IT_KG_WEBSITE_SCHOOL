@@ -76,8 +76,8 @@ const P = styled.p`
 `
 const DVImg = styled.div`
    display: flex;
-   width: 180px;
-   height: 180px;
+   width: 220px;
+   height: 220px;
    padding: 10px;
    justify-content: center;
    align-items: center;
@@ -100,8 +100,9 @@ const DVImg = styled.div`
    }
 `
 const Img = styled.img`
-   width: 160px;
-   height: 160px;
+   width: 200px;
+   height: 200px;
+
    flex-shrink: 0;
    border-radius: 100%;
    @media (max-width: 390px) {
