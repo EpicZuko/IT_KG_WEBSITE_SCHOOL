@@ -129,6 +129,21 @@ const DIVIMG = styled.div`
    background-size: 100%;
    background-repeat: no-repeat;
    background-position: center;
+   @media (max-width: 375px) {
+      width: 175px;
+      height: 120px;
+      flex-shrink: 0;
+   }
+   @media (max-width: 414px) {
+      width: 175px;
+      height: 120px;
+      flex-shrink: 0;
+   }
+   @media (max-width: 820px) {
+      width: 175px;
+      height: 120px;
+      flex-shrink: 0;
+   }
 `
 const Img = styled.img`
    width: 327px;

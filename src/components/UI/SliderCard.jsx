@@ -99,10 +99,14 @@ const DVImg = styled.div`
       margin-bottom: 27px;
    }
 `
-const Img = styled.img`
+const Img = styled.div`
    width: 200px;
    height: 200px;
-
+   background-image: url(${(props) => props.src});
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-position: center;
+   background-size: cover;
    flex-shrink: 0;
    border-radius: 100%;
    @media (max-width: 390px) {
