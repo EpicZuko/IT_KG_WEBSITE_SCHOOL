@@ -116,7 +116,7 @@ export const slider = [
    {
       id: 11,
       img: Nazgul,
-      userName: 'Nazgul Temishova',
+      userName: 'Nazgul Hanazarova',
       name: 'Менеджер',
    },
 ]

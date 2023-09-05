@@ -164,6 +164,7 @@ const H1 = styled.h3`
    line-height: normal;
    letter-spacing: 2.1px;
    margin-bottom: 73px;
+   margin-top: 40px;
    @media (max-width: 390px) {
       color: #0a5271;
       font-family: Roboto;
