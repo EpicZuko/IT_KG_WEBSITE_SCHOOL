@@ -41,7 +41,7 @@ const BackgroundVideo = styled.video`
       height: auto;
    }
    @media (min-aspect-ratio: 16/9) {
-      width: auto;
+      width: 100%;
       height: 100%;
    }
    @media screen and (max-width: 390px) {

@@ -118,19 +118,14 @@ const DIV = styled.div`
    display: flex;
    justify-content: space-evenly;
    margin-bottom: 275px;
-   @media (max-width: 390px) {
+   @media (max-width: 1800px) {
       display: flex;
-      flex-direction: column;
+      /* flex-direction: column; */
+      align-items: center;
       justify-content: space-evenly;
       margin-bottom: 96px;
    }
-   @media (max-width: 414px) {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-evenly;
-      margin-bottom: 96px;
-   }
-   @media (max-width: 820px) {
+   @media (max-width: 1150px) {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -144,10 +139,22 @@ const DIV = styled.div`
       justify-content: space-evenly;
       margin-bottom: 96px;
    }
-   @media (max-width: 1150px) {
+   @media (max-width: 820px) {
       display: flex;
       flex-direction: column;
       align-items: center;
+      justify-content: space-evenly;
+      margin-bottom: 96px;
+   }
+   @media (max-width: 414px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      margin-bottom: 96px;
+   }
+   @media (max-width: 390px) {
+      display: flex;
+      flex-direction: column;
       justify-content: space-evenly;
       margin-bottom: 96px;
    }
@@ -228,19 +235,22 @@ const DIVCARD = styled.div`
          }
       }
    }
-   @media (max-width: 390px) {
+   @media (max-width: 1800px) {
       margin-bottom: 42px;
    }
-   @media (max-width: 414px) {
-      margin-bottom: 42px;
-   }
-   @media (max-width: 820px) {
+   @media (max-width: 1150px) {
       margin-bottom: 42px;
    }
    @media (max-width: 912px) {
       margin-bottom: 42px;
    }
-   @media (max-width: 1150px) {
+   @media (max-width: 820px) {
+      margin-bottom: 42px;
+   }
+   @media (max-width: 414px) {
+      margin-bottom: 42px;
+   }
+   @media (max-width: 390px) {
       margin-bottom: 42px;
    }
 `
@@ -268,6 +278,9 @@ const DIVEND = styled.div`
       margin-bottom: 42px;
    }
    @media (max-width: 912px) {
+      margin-bottom: 42px;
+   }
+   @media (max-width: 1800px) {
       margin-bottom: 42px;
    }
 `

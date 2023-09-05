@@ -40,5 +40,6 @@ const MainPage = () => {
 export default MainPage
 
 const Div = styled.div`
+   width: 100%;
    background: white;
 `

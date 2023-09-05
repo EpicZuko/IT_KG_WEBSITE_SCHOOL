@@ -14,6 +14,7 @@ export default Robot
 
 const Img = styled.img`
    position: fixed;
+   width: 300px;
    right: 0px;
    z-index: 7;
    animation: example 8s ease-in-out 9s infinite alternate;
