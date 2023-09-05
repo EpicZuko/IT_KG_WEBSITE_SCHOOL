@@ -4,7 +4,7 @@ import Acceptance from '../components/acceptance/Acceptance'
 import MainContent from '../components/main/MainContent'
 import QuestionSelect from '../components/questionSelect/QuestionSelect'
 import Robot from '../components/robot/Robot'
-import Footer from '../components/UI/footer/Footer'
+// import Footer from '../components/UI/footer/Footer'
 // eslint-disable-next-line import/no-cycle
 import Header from '../components/UI/header/Header'
 import Modal from '../components/UI/Modal'
@@ -32,7 +32,7 @@ const MainPage = () => {
             <div id={elem.to}>{elem.page}</div>
          ))}
          <QuestionSelect />
-         <Footer />
+         {/* <Footer /> */}
       </Div>
    )
 }
@@ -40,5 +40,6 @@ const MainPage = () => {
 export default MainPage
 
 const Div = styled.div`
+   width: 100%;
    background: white;
 `

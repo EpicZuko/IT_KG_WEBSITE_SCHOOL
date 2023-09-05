@@ -1,6 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
-import image from '../../assets/image13.png'
+import abouticon1 from '../../assets/aboutIcon/photo_2023-09-06_00-31-55.jpg'
+import abouticon2 from '../../assets/aboutIcon/photo_2023-09-06_00-32-45.jpg'
+import abouticon3 from '../../assets/aboutIcon/photo_2023-09-06_00-33-32.jpg'
+import abouticon5 from '../../assets/aboutIcon/photo_2023-09-06_00-33-48.jpg'
+import abouticon6 from '../../assets/aboutIcon/photo_2023-09-06_00-33-53.jpg'
+import abouticon4 from '../../assets/aboutIcon/photo_2023-09-06_00-34-18.jpg'
+import abouticon7 from '../../assets/aboutIcon/photo_2023-09-06_00-34-22.jpg'
 import aboutwe1 from '../../assets/weAbout/aboutwe.png'
 import aboutwe2 from '../../assets/weAbout/IMG_5249.jpg'
 import aboutwe3 from '../../assets/weAbout/weabout3.jpg'
@@ -22,19 +28,25 @@ const About = () => {
                <DIVIMG img={aboutwe3} />
             </div>
             <div>
-               <Img src={image} alt="" />
+               <DIVIMG img={abouticon1} />
             </div>
             <div>
-               <Img src={image} alt="" />
+               <DIVIMG img={abouticon2} />
             </div>
             <div>
-               <Img src={image} alt="" />
+               <DIVIMG img={abouticon3} />
             </div>
             <div>
-               <Img src={image} alt="" />
+               <DIVIMG img={abouticon4} />
             </div>
             <div>
-               <Img src={image} alt="" />
+               <DIVIMG img={abouticon5} />
+            </div>
+            <div>
+               <DIVIMG img={abouticon6} />
+            </div>
+            <div>
+               <DIVIMG img={abouticon7} />
             </div>
          </Div>
       </div>
@@ -129,27 +141,6 @@ const DIVIMG = styled.div`
    background-size: 100%;
    background-repeat: no-repeat;
    background-position: center;
-   @media (max-width: 375px) {
-      width: 175px;
-      height: 120px;
-      flex-shrink: 0;
-   }
-   @media (max-width: 414px) {
-      width: 175px;
-      height: 120px;
-      flex-shrink: 0;
-   }
-   @media (max-width: 820px) {
-      width: 175px;
-      height: 120px;
-      flex-shrink: 0;
-   }
-`
-const Img = styled.img`
-   width: 327px;
-   height: 242px;
-   margin-left: 6px;
-   margin-bottom: 28px;
    @media (max-width: 375px) {
       width: 175px;
       height: 120px;
