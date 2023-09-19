@@ -30,7 +30,7 @@ export const AcceptencePost = createAsyncThunk(
             },
          })
 
-         showSuccessMessage('he he he he siuuu')
+         showSuccessMessage('сиздин өтүнүчүңүз кабыл алынды')
          dispatch(AcceptanceGet())
 
          if (!response.ok) {
@@ -39,7 +39,7 @@ export const AcceptencePost = createAsyncThunk(
 
          return response.json()
       } catch (err) {
-         showErrorMessage('Что-то прошло не так')
+         showErrorMessage('Бир жерден ката кетти. кайра аракет кылыңыз')
          return rejectWithValue(err.message)
       }
    }
@@ -54,13 +54,13 @@ export const AcceptanceDelete = createAsyncThunk(
             method: 'DELETE',
             body: id,
          })
-         showSuccessMessage('Delete Acceptance')
+         showSuccessMessage('ийгиликтүү жок кылынды')
          setTimeout(() => {
             dispatch(AcceptanceGet())
          }, 500)
          return response
       } catch (error) {
-         showErrorMessage('Что-то прошло не так')
+         showErrorMessage('Бир жерден ката кетти. кайра аракет кылыңыз')
          return rejectWithValue(error.message)
       }
    }

@@ -1,14 +1,12 @@
-import React from 'react'
 import styled from 'styled-components'
-// import MainVideo from ''
+import MainVideo from '../../assets/video/IMG_2988.mp4'
 
 const MainContent = () => {
    return (
       <Container>
-         <BackgroundVideo autoPlay loop muted plays-inline>
-            <source src="MainVideo" type="video/mp4" />
+         <BackgroundVideo loop muted autoPlay>
+            <source src={MainVideo} type="video/mp4" />
          </BackgroundVideo>
-
          <TextContainer>
             <TextItkg>IT KG - it Мектеби</TextItkg>
             <InformationText>
@@ -26,16 +24,13 @@ export default MainContent
 const Container = styled.div`
    width: 100%;
    height: 90vh;
-   background: rgba(0, 0, 0, 0.4);
 `
 const BackgroundVideo = styled.video`
+   width: 100%;
+   height: 90vh;
    position: absolute;
-   top: 0;
-   left: 0;
-   z-index: -1;
+   z-index: 0;
    object-fit: cover;
-   min-width: 100%;
-   min-height: 100vh;
    @media (min-aspect-ratio: 16/9) {
       width: 100%;
       height: auto;
@@ -55,9 +50,12 @@ const BackgroundVideo = styled.video`
 `
 const TextContainer = styled.div`
    text-align: center;
+   width: 100%;
    display: flex;
    flex-direction: column;
    align-items: center;
+   position: absolute;
+   z-index: 10;
 `
 const TextItkg = styled.h1`
    color: #ffffff;

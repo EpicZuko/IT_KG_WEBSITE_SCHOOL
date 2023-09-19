@@ -18,7 +18,7 @@ export const countsPutWorker = createAsyncThunk(
          const result = await response
          return result
       } catch (err) {
-         throw new Error('что-то прошло не так')
+         throw new Error('Бир жерден ката кетти. кайра аракет кылыңыз')
       }
    }
 )
@@ -37,7 +37,7 @@ export const countsPutWorkerMinus = createAsyncThunk(
          const result = await response
          return result
       } catch (err) {
-         throw new Error('что-то прошло не так')
+         throw new Error('Бир жерден ката кетти. кайра аракет кылыңыз ')
       }
    }
 )
@@ -56,7 +56,7 @@ export const countsPutStudentPresent = createAsyncThunk(
          const result = await response
          return result
       } catch (err) {
-         throw new Error('что-то прошло не так')
+         throw new Error('Бир жерден ката кетти. кайра аракет кылыңыз')
       }
    }
 )
@@ -76,7 +76,7 @@ export const countsPutStudentPresentMinus = createAsyncThunk(
          const result = await response
          return result
       } catch (err) {
-         throw new Error('что-то прошло не так')
+         throw new Error('Бир жерден ката кетти. кайра аракет кылыңыз')
       }
    }
 )
@@ -95,7 +95,7 @@ export const countsPutFinish = createAsyncThunk(
          const result = await response
          return result
       } catch (err) {
-         throw new Error('что-то прошло не так')
+         throw new Error('Бир жерден ката кетти. кайра аракет кылыңыз')
       }
    }
 )
@@ -114,7 +114,7 @@ export const countsPutFinishMinus = createAsyncThunk(
          const result = await response
          return result
       } catch (err) {
-         throw new Error('что-то прошло не так')
+         throw new Error('Бир жерден ката кетти. кайра аракет кылыңыз')
       }
    }
 )
@@ -131,7 +131,7 @@ export const countsGetRequest = createAsyncThunk(
          const result = await response
          return result
       } catch (err) {
-         throw new Error('что-то прошло не так')
+         throw new Error('Бир жерден ката кетти. кайра аракет кылыңыз')
       }
    }
 )
