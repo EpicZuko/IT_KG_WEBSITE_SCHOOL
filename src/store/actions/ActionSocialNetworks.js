@@ -17,7 +17,7 @@ export const instagramLinkUpdate = createAsyncThunk(
          const result = await response
          return result
       } catch (err) {
-         throw new Error('что-то прошло не так')
+         throw new Error('Бир жерден ката кетти. кайра аракет кылыңыз')
       }
    }
 )
@@ -37,7 +37,7 @@ export const youtubeLinkUpdate = createAsyncThunk(
          const result = await response
          return result
       } catch (err) {
-         throw new Error('что-то прошло не так')
+         throw new Error('Бир жерден ката кетти. кайра аракет кылыңыз')
       }
    }
 )
@@ -58,7 +58,7 @@ export const tiktokLinkUpdate = createAsyncThunk(
          const result = await response
          return result
       } catch (err) {
-         throw new Error('что-то прошло не так')
+         throw new Error('Бир жерден ката кетти. кайра аракет кылыңыз')
       }
    }
 )
@@ -79,7 +79,7 @@ export const telegramLinkUpdate = createAsyncThunk(
          const result = await response
          return result
       } catch (err) {
-         throw new Error('что-то прошло не так')
+         throw new Error('Бир жерден ката кетти. кайра аракет кылыңыз')
       }
    }
 )
@@ -99,7 +99,7 @@ export const whatsappLinkUpdate = createAsyncThunk(
          const result = await response
          return result
       } catch (err) {
-         throw new Error('что-то прошло не так')
+         throw new Error('Бир жерден ката кетти. кайра аракет кылыңыз')
       }
    }
 )

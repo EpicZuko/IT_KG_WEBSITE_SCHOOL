@@ -40,7 +40,7 @@ const Cards = () => {
                <Card>
                   <DivFront>
                      <H3>FRONTEND - JAVASCRIPT </H3>
-                     <Span>(6 ай)</Span>
+                     <Span>(6 ай окуу 3 ай практика)</Span>
                   </DivFront>
                   <UL>
                      <div>
@@ -78,7 +78,7 @@ const Cards = () => {
                <Card>
                   <DivBackEnd>
                      <H4>BACKEND - JAVA</H4>
-                     <SpanFront>(6 ай)</SpanFront>
+                     <Span>(6 ай окуу 3 ай практика)</Span>
                   </DivBackEnd>
                   <Ul>
                      <div>
