@@ -20,8 +20,7 @@ import PupilsCard from '../../components/card/PupilsCard'
 // eslint-disable-next-line import/no-cycle
 import Slider from '../../components/UI/Slider'
 
-export const URL_BASE =
-   'http://ec2-3-71-206-206.eu-central-1.compute.amazonaws.com/'
+export const URL_BASE = 'http://ec2-52-90-170-242.compute-1.amazonaws.com/'
 export const sliderArray = [
    {
       id: 1,
